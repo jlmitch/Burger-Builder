@@ -9,6 +9,10 @@
     padding: 10px 0;
 }
 
+.Price{
+    font-weight: bold; 
+}
+
 .OrderButton {
     background-color: #DAD735;
     outline: none;
