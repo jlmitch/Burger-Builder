@@ -1,0 +1,7 @@
+.IngredientName {
+    text-transform: capitalize;
+}
+
+.OrderSummaryPrice {
+    font-weight: bold;
+}
