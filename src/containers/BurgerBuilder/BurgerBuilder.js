@@ -36,6 +36,7 @@ class BurgerBuilder extends Component {
     }
 
     addIngredientHandler = type => {
+        debugger;
         const oldCount = this.state.ingredients[type];
         const updatedCount = oldCount + 1;
         const updatedIngredients = {
@@ -84,17 +85,15 @@ class BurgerBuilder extends Component {
 
     purchaseCancelHandler = () => this.setState({ purchasing: false })
 
-    purchaseContinueHandler = () => {
-        window.alert("continue")
-    }
+    purchaseContinueHandler = () => alert("continue")
 
     render () {
-        const disableInfo = {
+        const disabledInfo = {
             ...this.state.ingredients,
         }
 
-        for(let key in disableInfo) {
-            disableInfo[key] = disableInfo[key] <= 0
+        for(let key in disabledInfo) {
+            disabledInfo[key] = disabledInfo[key] <= 0
         }
 
         return (
@@ -113,7 +112,7 @@ class BurgerBuilder extends Component {
                     ordered={this.purchaseHandler}
                     ingredientRemoved={this.removeIngredientHandler}
                     ingredientAdded={this.addIngredientHandler}
-                    disabled={disableInfo}
+                    disabled={disabledInfo}
                     price={this.state.totalPrice}
                     purchaseable={this.state.purchaseable} />
             </Auxiliary>
